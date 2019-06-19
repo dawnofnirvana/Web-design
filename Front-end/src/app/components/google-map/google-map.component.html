@@ -1,0 +1,22 @@
+<p>
+  google-map works!
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAioxoXFhJmOEFLyosEN6JjhpWq-ElUx7M&libraries=places">
+
+  </script>
+  <!-- this creates a google map on the page with the given lat/lng from -->
+  <!-- the component as the initial center of the map: -->
+  <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="chooselocation($event)" >
+    <agm-marker   [latitude]="lat" [longitude]="lng" *ngIf="locationchoosed" >
+      <agm-info-window>
+        <h3><strong>Hi</strong></h3>
+        <p>we are here</p>
+      </agm-info-window>
+    </agm-marker>
+   </agm-map>
+   
+   <input *ngIf="from == 'calendar'"type="text" [(ngModel)]="positioninput">
+   <button *ngIf="from == 'calendar'"(click)="getPosition(positioninput)" >search position</button><br/>
+   <button *ngIf="from == 'calendar'"(click)="findMe()">locate me</button> <button id="addbutton"*ngIf="from == 'calendar'" (click)="addplace()" >add</button><br/>
+   <button *ngIf="from == 'detail'"(click)="getlocation()">find location</button>
+  
+</p>

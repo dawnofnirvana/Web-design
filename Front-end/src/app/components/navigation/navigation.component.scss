@@ -1,0 +1,201 @@
+// css for navigation
+
+
+// header
+.header-top {
+    margin: 1fr;
+    border-bottom: 1px solid #DADADA;
+    background: url('../../../../assets/back.jpg') no-repeat;
+    padding: 30px 0px 30px 100px;
+  }
+  
+  .logo {
+    float: left;
+    margin-top: 1.1em;
+  }
+  
+  h1 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 2.1em;
+    text-decoration: none;
+    color: #737373;
+    text-transform: uppercase;
+    border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    font-family: 'Lato', sans-serif;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #6b6666;
+    text-transform: uppercase;
+    border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  // navigation body style
+  .top-nav {
+    float: left;
+    background: url('../../../../assets/un.jpg') no-repeat;
+    width:100%;
+    margin: 15px 0;
+  }
+  
+  .top-icons {
+    float: right;
+    margin-top: 20px;
+  }
+  
+  // navigation items
+  .top-nav ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      float: left;
+      a {
+        padding: 0.47em 1em;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #b4b3b3;
+        text-transform: uppercase;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        border-radius: 0.3em;
+        -moz-border-radius: 0.3em;
+        -o-border-radius: 0.3em;
+        -webkit-border-radius: 0.3em;
+        font-family: 'Lato', sans-serif;
+      }
+      &.active a span {
+        background: #e74c3c;
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+      a:hover, &.active a {
+        color: #2ECC71;
+        cursor: pointer;
+      }
+      &:nth-child(5) a {
+        border-bottom: none;
+      }
+    }
+  }
+ 
+  // empty table to complete div
+  .clearfix {
+    &:before, &:after {
+      display: table;
+      content: " ";
+    }
+  }
+  
+  // fast link button with png
+  .top-icons ul {
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-left: 0px;
+      list-style: none;
+      a {
+        span {
+          width: 38px;
+          height: 36px;
+          display: inline-block;
+          background: url('../../../../assets/top-icons.png') no-repeat;
+          vertical-align: middle;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+        }
+        &.twitter span {
+          background-position: 0px 0px;
+          &:hover {
+            background-position: 0px 0px;
+          }
+        }
+        &.fb span {
+          background-position: -41px 0px;
+          &:hover {
+            background-position: -41px -45px;
+          }
+        }
+        &.rss span {
+          background-position: -41px 0px;
+          &:hover {
+            background-position: -82px -45px;
+          }
+          background-position: -82px 0px;
+        }
+        &.p span {
+          background-position: -123px 0px;
+          &:hover {
+            background-position: -123px -45px;
+          }
+        }
+        &.gp span {
+          background-position: -165px 0px;
+          &:hover {
+            background-position: -165px -45px;
+          }
+        }
+        &.db span {
+          background-position: -206px 0px;
+          &:hover {
+            background-position: -206px -45px;
+          }
+        }
+      }
+    }
+  }
+
+  // hidden css for login/register bar and text
+  .hiddentext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tooltip .hiddentext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .hiddentext {
+    visibility: visible;
+    opacity: 1;
+  }

@@ -1,0 +1,40 @@
+<!-- testing -->
+
+<div class="header-top">
+    <div class="logo">
+      <h1>Marvel Calendar</h1>
+      <h3>Welcome User: {{user.email}}</h3>
+    </div>
+    <!-- top-nav -->
+    
+    
+    <div class="top-icons">
+      <ul>
+        <li><a class="fb" href="www.facebook.com"><span> </span></a></li>
+        <li><a class="rss" (click)="logout()" ><span></span></a><span class="hiddentext">Log Out </span></li>
+        <div class="clearfix"> </div>
+      </ul>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+  <!-- menu for navigationbar -->
+  <div class="top-nav"> <span class="menu"> </span>
+    <ul>
+      <li><a class="fb" ><span> </span></a></li>
+      <li><a class="rss" (click)="logout()" ><span></span></a><span class="hiddentext">Log Out </span></li>
+      <div class="clearfix"> </div>
+
+      <li class="active"><a>Home</a></li>
+      <li><a [routerLink]="['calendar']"routerLinkActive="active" [queryParams]="{'email':user.email}">Calendar</a></li>
+      <li><a [routerLink]="['events']" routerLinkActive="active" [queryParams]="{'email':user.email}">My Events</a></li>
+      <li><a [routerLink]="['publicevents']" routerLinkActive="active" [queryParams]="{'email':user.email}">Public Event</a></li>
+      <li><a id="contact"href='tel:6174129665'>Contact US</a></li>
+
+    </ul>
+  </div>
+  <div class="clearfix"> </div>
+  
+  <!-- end testing -->
+
+  <router-outlet></router-outlet>
+  

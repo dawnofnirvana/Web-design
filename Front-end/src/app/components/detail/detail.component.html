@@ -1,0 +1,43 @@
+  <div class="contact_top">
+      <div class="container">
+              
+          <div class="col-md-8 contact_left">
+              <h4>{{checkEvent}}</h4>
+              <p>{{helpEvent}}</p>
+              
+               
+                  <div class="form_details">
+                      <div *ngIf="!fromPublic" class="divInForm">
+                          <input *ngIf="toggle" type="checkbox" id="cbx" style="display:none" />
+                          <input *ngIf="!toggle" type="checkbox" id="cbx" style="display:none" checked/>
+                          <label for="cbx" class="toggle" (click)="toggleButton()"><span></span></label>
+                          <label class="toggleLabel">{{checkPrivacy}}</label>
+                      </div>
+
+                      <input *ngIf="!fromPublic" type="text" class="text" [(ngModel)] = "user.email" readonly>
+                      <input *ngIf="fromPublic" type="text" class="text" [(ngModel)] = "event.username" readonly>
+                      <input type="text" class="text" [(ngModel)] = "event.date" readonly>
+                      <input *ngIf="!fromPublic" type="text" class="text" [(ngModel)] = "event.title" placeholder="Title" onfocus="this.placeholder = '';" onblur="if (this.value == '') {this.placeholder = 'Title';}">
+                      <input *ngIf="fromPublic" type="text" class="text" [(ngModel)] = "event.title" readonly>
+                      <input type="text" class="text" style="width: 80%;"value={{event.address}} (click)="popup(true)"readonly>
+                      <div id="popup" class="modal" [style.display]="pop ? 'block':'none'">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <span class="close1" (click)="popup(false)">&times;</span></div>
+                              <div class="modal-body"> 
+                                <app-google-map [from]="'detail'" [address]="event.address" (addressEvent)="receiveAddress($event)" (popEvent)="receivePopup($event)" ></app-google-map> </div></div>
+                      </div>
+                      <textarea *ngIf="!fromPublic" [(ngModel)] = "event.description" placeholder="Event Description" onfocus="this.placeholder = '';" onblur="if (this.value == '') {this.placeholder = 'Event Description';}"></textarea>
+                      <textarea *ngIf="fromPublic" [(ngModel)] = "event.description" placeholder="Event Description" readonly></textarea>
+                      <div class="clearfix"> </div>
+                      <div class="sub-button">
+                          <input *ngIf="!fromPublic" (click)="submit()" name="submit" type="submit" value="Update">
+                          <input *ngIf="!fromPublic" id="myButton" type="submit" value="Cancel" style="float: right;" [routerLink] = "[link]" [queryParams]="{'email':user.email}">
+                          <input *ngIf="fromPublic" id="myButton" type="submit" value="Back" style="float: left;" [routerLink] = "[link]" [queryParams]="{'email':user.email}">
+                      </div>
+                      
+                   </div>
+                
+             </div>
+         </div>
+     </div>

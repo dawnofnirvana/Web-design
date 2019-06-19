@@ -1,0 +1,36 @@
+<!-- top container for title and navigator -->
+<div class="contact_top">
+    <div class="container">
+            
+        <div class="col-md-8 contact_left">
+            <h4>Add Event</h4>
+            <p>Please enter following information:</p>
+            
+             <!-- form contains detail informations -->
+                <div class="form_details" >
+                    <!-- toggle button, left is private, right is public -->
+                        <div class="divInForm">
+                                <input type="checkbox" id="cbx" style="display:none" />
+                                <label for="cbx" class="toggle" (click)="toggleButton()" ><span></span></label>
+                                <label class="toggleLabel">{{checkPrivacy}}</label>
+                        </div>
+                    <input type="text" class="text" [(ngModel)] = "user.email" readonly>
+                    <input type="text" class="text" [(ngModel)] = "event.date" readonly>
+                    <input type="text" class="text" [(ngModel)] = "event.title" placeholder="Title" onfocus="this.placeholder = '';" onblur="if (this.value == '') {this.placeholder = 'Title';}">
+                    <input type="text" class="text" style="width: 80%;"value={{event.address}} readonly>
+
+
+                    <!-- event description -->
+                    <textarea [(ngModel)] = "event.description" placeholder="Event Description" onfocus="this.placeholder = '';" onblur="if (this.value == '') {this.placeholder = 'Event Description';}"></textarea>
+                    <div class="clearfix"> </div>
+                    <div class="sub-button">
+                        <input (click)="postevent()" name="submit" type="submit" value="Create Event">
+                        <input id="myButton" type="submit" value="Cancel" style="float: right;" routerLink = "/components/navi/calendar" [queryParams]="{'email':user.email}">
+                    </div>
+                    
+                 </div>
+              
+           </div>
+       </div>
+   </div>
+<router-outlet></router-outlet>

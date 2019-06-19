@@ -1,0 +1,23 @@
+<!-- form for register -->
+    <form class="form-group" name="myform" #f="ngForm"  (ngSubmit)="f.form.valid && validate()" novalidate>
+        <!-- input email address -->
+        <label for="usereamil">Email:</label><br/>
+        <input type="email" name="useremail" [(ngModel)]="useremail" required (blur)="checkemail()"/><br/>
+        <p>xxxx@domain.com</p>
+        <!-- validate email -->
+        <div *ngIf="!useremail&&f.submitted" class="help-block">Email is required</div><br/>
+        <div *ngIf="!namevalid" class="help-block">Email has already been taken</div><br/>
+        <!-- input password -->
+        <label for="password">Password:</label><br/>
+        <input type="password"  name="password"  [(ngModel)]="password" required /><br/>
+        <!-- validate password -->
+        <div  *ngIf="!password&&f.submitted" class="help-block">Password is required</div><br/>
+        <!-- re-enter password -->
+        <label for="password">Re-enter Password:</label><br/>
+        <input type="password"  name="repassword"  [(ngModel)]="repassword" required /><br/>
+        <!-- validate re-enter -->
+        <div *ngIf="repassword!=password&&f.submitted" class="help-block">Password is not eqaul</div><br/>
+   
+    <!-- confirm register -->
+    <button  [disabled]="loading"  >Register</button> </form>
+

@@ -1,0 +1,22 @@
+<!-- searchbar container -->
+<div id="cover" ng-controller="newCtrl">
+        <div class="tb">
+            <div class="td"><input type="text" [(ngModel)] = "searchItem" placeholder="Search" required></div>
+            <div class="td" id="s-cover">
+                <button type="submit" (click)="SearchTrigger()">
+                <div id="s-circle"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+<!-- list item container -->
+<div class="contentBoxContainer" ng-controller="pageloadContrl">
+    <ul id="todoList">
+    <!-- add id to get access through js -->
+        <li *ngFor="let item of todoList;let key = index" ng-controller="myCtrl" (mouseover)="assignPbody(key)" (click)="EditTrigger(key)" [routerLink]="[detaillink]" [queryParams] = "{_id: this.pbody, connection: 'publicevents', 'email':user.email}">
+            <span class="item">Title: {{item.title}}</span>
+            <span class="item">Date: {{item.date}}</span>
+            <span class="item">Address: {{item.address}}</span>
+        </li>
+    </ul>
+</div>

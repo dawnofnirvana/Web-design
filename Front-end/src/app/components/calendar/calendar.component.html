@@ -1,0 +1,44 @@
+
+<!-- select bar container -->
+<div class="boxContainer">
+<div class="calendarContainer">
+  <h2>{{Title}}</h2>
+</div>
+
+<!-- date picker -->
+<div class="calendarContainer">
+<mat-form-field id="miniCalendar">
+  <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+</div>
+<!-- button container -->
+<div id="testBtnContainer" class="calendarContainer">
+<button class="myButton" (click)="clickTrigger()">Check Event</button><br/>
+<button class="myButton" (click)="popup(true)">Choose Location</button>
+<button class="myButton" (click)="clickAddTrigger()" *ngIf="!(selectedDate=='')&&clicked&&address&&validateDate" [routerLink]="[link]" [queryParams]="{'address':address,'date':new_date, 'email':user.email}">Add Event</button>
+</div>
+</div>
+
+<!-- content white box -->
+<div class="contentBoxContainer">
+  <ul id="todoList">
+    <!-- add id to get access through js -->
+    <li *ngFor="let item of todoList;let key = index" ng-controller="myCtrl" (mouseover)="assignPbody(key)" (click)="EditTrigger(key)" [routerLink]="[detaillink]" [queryParams] = "{_id: pbody, connection: 'calendar', 'email':user.email}">
+        <span class="item">Title: {{item.title}}</span>
+        <span class="item">Address: {{item.address}}</span>
+      <span class="close" ng-bind-html="'\u00D7'|html" (click)="DeleteTrigger(key)">{{md}}</span>
+    </li>
+  </ul>
+</div>
+
+<!-- popup window google map-->
+<div id="popup" class="modal" [style.display]="pop ? 'block':'none'">
+  <div class="modal-content">
+    <div class="modal-header">
+        <span class="close1" (click)="popup(false)">&times;</span></div>
+        <div class="modal-body"> 
+<app-google-map [from]="'calendar'" (addressEvent)="receiveAddress($event)" (popEvent)="receivePopup($event)"></app-google-map></div></div>
+</div>
+

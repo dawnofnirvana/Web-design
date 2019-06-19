@@ -1,0 +1,195 @@
+.contentBoxContainer {
+    padding: 20px auto;
+    display: block;
+    width: 100%;
+    height: 600px;
+    float: left;
+    > #todoList {
+    overflow:scroll;
+        width: 90%;
+        height: 500px;
+        background: white;
+        border: 1px solid whitesmoke;
+        margin: 20px auto 0;
+        padding: 20px 40px 20px 40px;
+        > li {
+      margin-bottom: 5px;
+          list-style-type: none;
+          width: 80%;
+          position: relative;
+          border: 1px solid #333;
+          border-radius: 5px;
+          padding: 12px 30px 12px 30px;
+          background: #ffe79a;
+          font-size: 12px;
+          &:nth-child(odd) {
+            background: #c8e4fe;
+          }
+          &:hover {
+      background: #5188f9;
+      cursor: pointer;
+          }
+    }
+    .badge {
+      display: inline-block;
+      font-size: small;
+      color: white;
+      padding: 1em 1em 0 1em;
+      background-color: rgb(204, 33, 48);
+      line-height: 1em;
+      position: relative;
+      left: -1px;
+      top: -4px;
+      height: 3em;
+      min-width: 50px;
+      text-align: center;
+      margin-right: 1em;
+      border-radius: 4px;
+    }
+    }
+  }
+    
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+    vertical-align: middle;
+    padding: 5px 16px 5px 16px;
+      &:hover {
+      color: red;
+      cursor: pointer;
+      }
+  }
+  
+  .item {
+      font-size: 1.1em;
+      width: 600px;
+      height: auto;
+      color: black;
+      display: inline-block;
+  }
+    
+  .myButton {
+    -moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
+    box-shadow:inset 0px 1px 0px 0px #a4e271;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+    background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+    background-color:#89c403;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #74b807;
+    display:block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 20px;
+    width: 180px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528009;
+  }
+
+//searchbar
+body
+{
+    margin: 0;
+    background-color: #ffd8d8;
+}
+
+.tb
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    color: rgba(251, 255, 249, 0.911);
+    font-family: Nunito;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+// searchbar cover box
+#cover
+{
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 300px;
+    padding: 10px;
+    margin: 0px auto 0 auto;
+    background-color: #3db66d;
+    border-radius: 20px;
+}
+
+input[type="text"]
+{
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    line-height: 1;
+}
+
+input[type="text"]::placeholder
+{
+    color: #29453c;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 5px;
+}
+
+button
+{ 
+    float: right;
+    margin: 0px 20px 0px 0px;
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -8px;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    margin-top: 0;
+    border-width: 13px;
+    border: 11px solid #1b615e;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 35px;
+    height: 15px;
+    border-width: 0;
+    background-color: #147245;
+    border-radius: 20px;
+}
