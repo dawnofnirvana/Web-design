@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
 # User Story- Task Planner App
+See Presentation.pptx file for more details.
 
 As a user, I should have a option to sign up and login to my account, so that I can see what I saved in the Planner.
 
