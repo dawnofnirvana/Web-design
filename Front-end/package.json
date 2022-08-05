@@ -34,7 +34,7 @@
     "express": "^4.16.4",
     "firebase": "^5.8.2",
     "geofire": "^4.1.2",
-    "mongoose": "^5.3.14",
+    "mongoose": "^5.7.5",
     "ngx-bootstrap": "^3.1.2",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.4.0",
